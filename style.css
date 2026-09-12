@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Светлый обычный фон, как на Myinstants */
+    color: #333333;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/* === СТИЛИ ДЛЯ СТРОКИ ПОИСКА === */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 40px auto; /* Центрируем и делаем отступ до кнопок */
+    padding: 0 10px;
+}
+
+#soundSearch {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    background-color: #ffffff;
+    border: 2px solid #d1d5db;
+    border-radius: 50px; /* Округлая форма строки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Эффект при клике на поиск */
+#soundSearch:focus {
+    border-color: #007aff; /* Синий цвет в стиле ваших кнопок */
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.15);
+}
+
+/* Сетка для круглых кнопок — делает их ГОРИЗОНТАЛЬНЫМИ */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Контейнер для кнопки и текста под ней */
+.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+/* Круглая 3D кнопка в стиле Myinstants */
+.sound-btn {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Добавлен box-shadow в transition для плавности нажатия */
+    transition: transform 0.05s ease, box-shadow 0.05s ease; 
+}
+
+/* Эффект нажатия (кнопка уходит вниз) */
+.sound-btn:active {
+    transform: translateY(4px);
+}
+
+/* Текст с названием звука под круглой кнопкой */
+.btn-title {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #444444;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* АВТОМАТИЧЕСКАЯ ПОКРАСКА ВСЕХ КНОПОК И ИХ 3D ТЕНИ */
+
+/* 1. Красный */
+.btn-wrapper:nth-child(5n+1) .sound-btn {
+    background: #ff3b30;
+    box-shadow: 0 6px 0 #b3241c, 0 8px 10px rgba(0,0,0,0.3);
+}
+/* Смещение тени уменьшено до 2px (было 6px - 4px смещения = 2px), чтобы кнопка не висела в воздухе */
+.btn-wrapper:nth-child(5n+1) .sound-btn:active { 
+    box-shadow: 0 2px 0 #b3241c, 0 4px 6px rgba(0,0,0,0.3); 
+}
+
+/* 2. Синий */
+.btn-wrapper:nth-child(5n+2) .sound-btn {
+    background: #007aff;
+    box-shadow: 0 6px 0 #0051a8, 0 8px 10px rgba(0,0,0,0.3);
+}
+.btn-wrapper:nth-child(5n+2) .sound-btn:active { 
+    box-shadow: 0 2px 0 #0051a8, 0 4px 6px rgba(0,0,0,0.3); 
+}
+
+/* 3. Зеленый */
+.btn-wrapper:nth-child(5n+3) .sound-btn {
+    background: #34c759;
+    box-shadow: 0 6px 0 #208237, 0 8px 10px rgba(0,0,0,0.3);
+}
+.btn-wrapper:nth-child(5n+3) .sound-btn:active { 
+    box-shadow: 0 2px 0 #208237, 0 4px 6px rgba(0,0,0,0.3); 
+}
+
+/* 4. Желтый */
+.btn-wrapper:nth-child(5n+4) .sound-btn {
+    background: #ffcc00;
+    box-shadow: 0 6px 0 #b38f00, 0 8px 10px rgba(0,0,0,0.3);
+}
+.btn-wrapper:nth-child(5n+4) .sound-btn:active { 
+    box-shadow: 0 2px 0 #b38f00, 0 4px 6px rgba(0,0,0,0.3); 
+}
+
+/* 5. Фиолетовый (Сюда же автоматически попадет кнопка pop, так как она 19-я по счету) */
+.btn-wrapper:nth-child(5n+5) .sound-btn {
+    background: #af52de;
+    box-shadow: 0 6px 0 #7a349c, 0 8px 10px rgba(0,0,0,0.3);
+}
+.btn-wrapper:nth-child(5n+5) .sound-btn:active { 
+    box-shadow: 0 2px 0 #7a349c, 0 4px 6px rgba(0,0,0,0.3); 
+}
+
+/* Кнопка СТОП (остается обычной и снизу) */
+.stop-container {
+    margin-top: 50px;
+}
+.stop-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.1s, transform 0.05s;
+}.stop-btn:hover { background-color: #c9302c; }
+.stop-btn:active { transform: scale(0.95); }

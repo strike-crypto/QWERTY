@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ПОЛЕ ПОИСКА -->
+    <div class="search-container">
+        <input type="text" id="soundSearch" placeholder="Поиск звуков (например: взрыв, кошечка, база)...">
+    </div>
+
+    <!-- Сетка для круглых кнопок -->
+    <div class="btn-container">
+
+        <!-- СТАРЫЕ КНОПКИ -->
+        <div class="btn-wrapper" data-tags="у кошечки болит кот кошка мяу животные">
+            <button class="sound-btn" onclick="playSound('укошечкиболит')">🐱</button>
+            <div class="btn-title">у кошечки болит</div>
+        </div>
+        <div class="btn-wrapper" data-tags="фото снимок камера фотоаппарат вспышка фотка">
+            <button class="sound-btn" onclick="playSound('фото')">📸</button>
+            <div class="btn-title">фото</div>
+        </div>
+        <div class="btn-wrapper" data-tags="415 база ответьте рация радио военные полиция">
+            <button class="sound-btn" onclick="playSound('415базаответье')">📻</button>
+            <div class="btn-title">415 база ответьте</div>
+        </div>
+        <div class="btn-wrapper" data-tags="yrayaraphonk музыка фонк трек песня">
+            <button class="sound-btn" onclick="playSound('yrayaraphonk')">🎵</button>
+            <div class="btn-title">yrayaraphonk</div>
+        </div>
+        <div class="btn-wrapper" data-tags="дай дай дай руки попрошайка просить">
+            <button class="sound-btn" onclick="playSound('дайдайдайдай')">🤲</button>
+            <div class="btn-title">дай дай дай</div>
+        </div>
+        <div class="btn-wrapper" data-tags="мусор дроп выкинуть бак ведро корзина">
+            <button class="sound-btn" onclick="playSound('мусордроп')">🗑️</button>
+            <div class="btn-title">мусор дроп</div>
+        </div>
+        <div class="btn-wrapper" data-tags="темная ночь луна вечер небо">
+            <button class="sound-btn" onclick="playSound('темнаяночь')">🌙</button>
+            <div class="btn-title">темная ночь</div>
+        </div>
+        <div class="btn-wrapper" data-tags="тики тики часы время будильник таймер">
+            <button class="sound-btn" onclick="playSound('тикитикитики')">⏰</button>
+            <div class="btn-title">тики тики</div>
+        </div>
+        <div class="btn-wrapper" data-tags="взрыв бомба бабах граната огонь бам">
+            <button class="sound-btn" onclick="playSound('взрыв')">💥</button>
+            <div class="btn-title">взрыв</div>
+        </div>
+        <div class="btn-wrapper" data-tags="запустил админ абьюз администрирование инструменты работа">
+            <button class="sound-btn" onclick="playSound('запустиладминабьюз')">🛠️</button>
+            <div class="btn-title">админ абьюз</div>
+        </div>
+        <div class="btn-wrapper" data-tags="ржд поезд вокзал рельсы паровоз электричка туту">
+            <button class="sound-btn" onclick="playSound('ржд')">🚂</button>
+            <div class="btn-title">ржд</div>
+        </div>
+        <div class="btn-wrapper" data-tags="пожарная тревога сирена🚨 полиция помощь опасности">
+            <button class="sound-btn" onclick="playSound('пожарнаятревога')">🚨</button>
+            <div class="btn-title">пожарная тревога</div>
+        </div>
+        <div class="btn-wrapper" data-tags="запустил семя варбуз арбуз ягода еда">
+            <button class="sound-btn" onclick="playSound('запустилсемяварбуз')">🍉</button>
+            <div class="btn-title">арбуз</div>
+        </div>
+        <div class="btn-wrapper" data-tags="67 цифры числа счет">
+            <button class="sound-btn" onclick="playSound('67')">🔢</button>
+            <div class="btn-title">67</div>
+        </div>
+        <div class="btn-wrapper" data-tags="burmalda медведь бурмалда мишка">
+            <button class="sound-btn" onclick="playSound('burmalda')">🐻</button>
+        <div class="btn-title">burmalda</div>
+        </div>
+        <div class="btn-wrapper" data-tags="звук домофона ключи дверь открыть подъезд">
+            <button class="sound-btn" onclick="playSound('звукдомофона')">🔑</button>
+            <div class="btn-title">звук домофона</div>
+        </div>
+        <div class="btn-wrapper" data-tags="винда windows пк компьютер ошибка система">
+            <button class="sound-btn" onclick="playSound('винда')">💻</button>
+            <div class="btn-title">винда</div>
+        </div>
+        <div class="btn-wrapper" data-tags="-999 минус рейтинг мем стрелка вниз">
+            <button class="sound-btn" onclick="playSound('-999')">📉</button>
+            <div class="btn-title">-999</div>
+        </div>
+        <div class="btn-wrapper" data-tags="minuta минута время песочные часы ждать">
+            <button class="sound-btn" onclick="playSound('minuta')">⏳</button>
+            <div class="btn-title">minuta</div>
+        </div>
+        <div class="btn-wrapper" data-tags="monster kill монстр килл игра убийство мем голос">
+            <button class="sound-btn" onclick="playSound('monsterkill')">👾</button>
+            <div class="btn-title">monster kill</div>
+        </div>
+        <!-- НОВЫЕ КНОПКИ -->
+        <div class="btn-wrapper" data-tags="важная походка очки крутой поход мафия">
+            <button class="sound-btn" onclick="playSound('важнаяпоходка')">🕶️</button>
+            <div class="btn-title">важная походка</div>
+        </div>
+        <div class="btn-wrapper" data-tags="тони старк собрал железный человек марвел marvel мстители">
+            <button class="sound-btn" onclick="playSound('тонистарксобрал')">✨</button>
+            <div class="btn-title">тони старк</div>
+        </div>
+        <div class="btn-wrapper" data-tags="аааааа крик ор мем радость смайлик">
+            <button class="sound-btn" onclick="playSound('аааааа')">😀</button>
+            <div class="btn-title">аааааа</div>
+        </div>
+        <div class="btn-wrapper" data-tags="банкомат деньги кэш наличные выдача банкомата">
+            <button class="sound-btn" onclick="playSound('банкомат')">💷</button>
+            <div class="btn-title">банкомат</div>
+        </div>
+        <div class="btn-wrapper" data-tags="загадочность тайна секрет вопрос что">
+            <button class="sound-btn" onclick="playSound('загадочность')">❓</button>
+            <div class="btn-title">загадочность</div>
+        </div>
+        <div class="btn-wrapper" data-tags="ссср гимн советский союз коммунизм патриот">
+            <button class="sound-btn" onclick="playSound('ссср')">🔱</button>
+            <div class="btn-title">ссср</div>
+        </div>
+        <div class="btn-wrapper" data-tags="загадочность2 тайна секрет знаки восклицание">
+            <button class="sound-btn" onclick="playSound('загадочность2')">⁉️</button>
+            <div class="btn-title">загдочность2</div>
+        </div>
+        <div class="btn-wrapper" data-tags="яндекс такси машина поездка таксист яндекс">
+            <button class="sound-btn" onclick="playSound('яндекстакси')">🚕</button>
+            <div class="btn-title">яндекс такси</div>
+        </div>
+        <div class="btn-wrapper" data-tags="gta v сообщение гта5 гта телефон звонок">
+            <button class="sound-btn" onclick="playSound('GTAVсообщение')">🚐</button>
+            <div class="btn-title">GTA V сообщение</div>
+        </div>
+        <div class="btn-wrapper" data-tags="мелстрой стоп mellstroy мем хватит">
+            <button class="sound-btn" onclick="playSound('мелстройстоп')">😎</button>
+            <div class="btn-title">мелстрой стоп</div>
+        </div>
+        <div class="btn-wrapper" data-tags="фаааа звук дудка фейл грустный проигрыш">
+            <button class="sound-btn" onclick="playSound('фаааа')">😐</button>
+            <div class="btn-title">фаааа</div>
+        </div>
+        <div class="btn-wrapper" data-tags="быстрый бег ролики скорость шаги побег">
+            <button class="sound-btn" onclick="playSound('быстрыйбег')">🛼</button>
+            <div class="btn-title">быстрый бег</div>
+        </div>
+        <div class="btn-wrapper" data-tags="сэр да сэр армия военный честь отдать салют">
+            <button class="sound-btn" onclick="playSound('сэрдасэр')">🫡</button>
+            <div class="btn-title">сэр да сэр</div>
+        </div>
+        <div class="btn-wrapper" data-tags="потому что он мусульманин злость крик мем">
+            <button class="sound-btn" onclick="playSound('потомучтоонмусульманин')">😡</button>
+            <div class="btn-title">потому что он мусульманин</div>
+        </div>
+        <div class="btn-wrapper" data-tags="discord дискорд звонок уведомление звук">
+            <button class="sound-btn" onclick="playSound('discord')">🎆</button>
+            <div class="btn-title">discord</div>
+        </div>
+        <div class="btn-wrapper" data-tags="minecraft майнкрафт игра блоки опыт клик">
+            <button class="sound-btn" onclick="playSound('minecraft')">🖼️</button>
+            <div class="btn-title">minecraft</div>
+        </div>
+        <div class="btn-wrapper" data-tags="error ошибка критическая винда стоп крест">
+        <button class="sound-btn" onclick="playSound('error')">⛔</button>
+            <div class="btn-title">error</div>
+        </div>
+        <div class="btn-wrapper" data-tags="pop поп шарик лопнул звук фиолетовый">
+            <button class="sound-btn btn-purple" onclick="playSound('pop')">🎈</button>
+            <div class="btn-title">pop</div>
+        </div>
+
+    </div> <!-- Конец сетки btn-container -->
+
+    <!-- КНОПКА СТОП -->
+    <div class="stop-container">
+        <button class="stop-btn" onclick="stopAllSounds()">Stop</button>
+    </div>
+
+    <!-- ТЕКСТ ЕСЛИ НИЧЕГО НЕ НАЙДЕНО -->
+    <div id="noResults" style="display: none; text-align: center; padding: 20px; font-size: 18px; color: #888;">
+        Звук не найден 😢
+    </div>
+    <!-- ВСЕ АУДИОПЛЕЕРЫ -->
+    <audio id="укошечкиболит" src="укошечкиболит.mp3" preload="auto"></audio>
+    <audio id="фото" src="фото.mp3" preload="auto"></audio>
+    <audio id="415базаответье" src="415базаответье.mp3" preload="auto"></audio>
+    <audio id="yrayaraphonk" src="yrayraphonk.mp3" preload="auto"></audio>
+    <audio id="дайдайдайдай" src="дайдайдайдай.mp3" preload="auto"></audio>
+    <audio id="мусордроп" src="мусордроп.mp3" preload="auto"></audio>
+    <audio id="темнаяночь" src="темнаяночь.mp3" preload="auto"></audio>
+    <audio id="тикитикитики" src="тикитикитики.mp3" preload="auto"></audio>
+    <audio id="взрыв" src="взрыв.mp3" preload="auto"></audio>
+    <audio id="запустиладминабьюз" src="запустиладминабьюз.mp3" preload="auto"></audio>
+    <audio id="ржд" src="ржд.mp3" preload="auto"></audio>
+    <audio id="пожарнаятревога" src="пожарнаятревога.mp3" preload="auto"></audio>
+    <audio id="запустилсемяварбуз" src="запустилсемяварбуз.mp3" preload="auto"></audio>
+    <audio id="67" src="67.mp3" preload="auto"></audio>
+    <audio id="burmalda" src="burmalda.mp3" preload="auto"></audio>
+    <audio id="звукдомофона" src="звукдомофона.mp3" preload="auto"></audio>
+    <audio id="винда" src="винда.mp3" preload="auto"></audio>
+    <audio id="-999" src="-999.mp3" preload="auto"></audio>
+    <audio id="minuta" src="minuta.mp3" preload="auto"></audio>
+    <audio id="monsterkill" src="monster.mp3" preload="auto"></audio>
+    <audio id="важнаяпоходка" src="важнаяпоходка.mp3" preload="auto"></audio>
+    <audio id="тонистарксобрал" src="тонистарксобрал.mp3" preload="auto"></audio>
+    <audio id="аааааа" src="аааааа.mp3" preload="auto"></audio>
+    <audio id="банкомат" src="банкомат.mp3" preload="auto"></audio>
+    <audio id="загадочность" src="загадочность.mp3" preload="auto"></audio>
+    <audio id="ссср" src="ссср.mp3" preload="auto"></audio>
+    <audio id="загадочность2" src="загадочность2.mp3" preload="auto"></audio>
+    <audio id="яндекстакси" src="яндекстакси.mp3" preload="auto"></audio>
+    <audio id="GTAVсообщение" src="GTAVсообщение.mp3" preload="auto"></audio>
+    <audio id="мелстройстоп" src="мелстройстоп.mp3" preload="auto"></audio>
+    <audio id="фаааа" src="фаааа.mp3" preload="auto"></audio>
+    <audio id="быстрыйбег" src="быстрыйбег.mp3" preload="auto"></audio>
+    <audio id="сэрдасэр" src="сэрдасэр.mp3" preload="auto"></audio>
+    <audio id="потомучтоонмусульманин" src="потомучтоонмусульманин.mp3" preload="auto"></audio>
+    <audio id="discord" src="discord.mp3" preload="auto"></audio>
+    <audio id="minecraft" src="minecraft.mp3" preload="auto"></audio>
+    <audio id="error" src="error.mp3" preload="auto"></audio>
+    <audio id="pop" src="pop.mp3" preload="auto"></audio>
+
+    <!-- Скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
