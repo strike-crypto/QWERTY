@@ -1,18 +1,47 @@
+/* ==========================================
+   ОСНОВНОЙ СТИЛЬ
+   ========================================== */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333333;
+
+    /* Тёмный неоновый фон */
+    background:
+        radial-gradient(circle at 50% 0%, #151b2e 0%, #080b12 45%, #05070b 100%);
+
+    color: #ffffff;
     text-align: center;
+
     padding: 30px 10px;
+
+    min-height: 100vh;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
 }
+
+
+/* ==========================================
+   ЗАГОЛОВОК
+   ========================================== */
 
 h1 {
     font-size: 24px;
     margin-bottom: 40px;
-    color: #222;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 5px #00eaff,
+        0 0 12px #00eaff,
+        0 0 25px rgba(0, 234, 255, 0.8);
 }
 
-/* === СТИЛИ ДЛЯ СТРОКИ ПОИСКА === */
+
+/* ==========================================
+   СТИЛИ ДЛЯ СТРОКИ ПОИСКА
+   ========================================== */
 
 .search-container {
     max-width: 600px;
@@ -23,162 +52,312 @@ h1 {
 #soundSearch {
     width: 100%;
     max-width: 100%;
+
     padding: 14px 20px;
+
     font-size: 16px;
     font-weight: 500;
-    color: #333;
-    background-color: #ffffff;
-    border: 2px solid #d1d5db;
+
+    color: #ffffff;
+
+    background: rgba(12, 18, 30, 0.95);
+
+    border: 2px solid #00eaff;
+
     border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    box-shadow:
+        0 0 5px rgba(0, 234, 255, 0.5),
+        0 0 15px rgba(0, 234, 255, 0.25),
+        inset 0 0 10px rgba(0, 234, 255, 0.05);
+
     outline: none;
+
     box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#soundSearch::placeholder {
+    color: #7f8da3;
 }
 
 /* Эффект при клике на поиск */
 
 #soundSearch:focus {
-    border-color: #007aff;
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.15);
+    border-color: #00f6ff;
+
+    background: rgba(8, 15, 27, 1);
+
+    box-shadow:
+        0 0 7px #00eaff,
+        0 0 18px #00eaff,
+        0 0 35px rgba(0, 234, 255, 0.45),
+        inset 0 0 12px rgba(0, 234, 255, 0.08);
 }
 
-/* === СЕТКА КНОПОК === */
+
+/* ==========================================
+   СЕТКА КНОПОК
+   ========================================== */
 
 .btn-container {
     display: flex;
+
     justify-content: center;
+
     gap: 25px;
+
     flex-wrap: wrap;
+
     max-width: 800px;
+
     margin: 0 auto;
 }
+
 
 /* Контейнер для кнопки и текста под ней */
 
 .btn-wrapper {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     width: 100px;
 }
 
-/* === КРУГЛЫЕ КНОПКИ === */
+
+/* ==========================================
+   КРУГЛЫЕ КНОПКИ
+   ========================================== */
 
 .sound-btn {
     width: 75px;
     height: 75px;
+
     border-radius: 50%;
-    border: none;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+
     cursor: pointer;
+
     font-size: 24px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
+    position: relative;
+
     transition:
-        transform 0.05s ease,
-        box-shadow 0.05s ease;
+        transform 0.08s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease;
 }
+
+/* Небольшое свечение самой кнопки */
+
+.sound-btn:hover {
+    filter: brightness(1.12);
+}
+
 
 /* Эффект нажатия */
 
 .sound-btn:active {
-    transform: translateY(4px);
+    transform: translateY(5px) scale(0.96);
 }
 
-/* === НАЗВАНИЕ ЗВУКА === */
+
+/* ==========================================
+   НАЗВАНИЕ ЗВУКА
+   ========================================== */
 
 .btn-title {
     margin-top: 8px;
+
     font-size: 13px;
+
     font-weight: bold;
-    color: #444444;
+
+    color: #dce7f5;
+
     text-align: center;
+
     word-break: break-word;
+
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.15);
 }
+
 
 /* ==========================================
    АВТОМАТИЧЕСКАЯ ПОКРАСКА КНОПОК
    ========================================== */
 
-/* 1. Красный */
+
+/* ==========================================
+   1. КРАСНЫЙ
+   ========================================== */
 
 .btn-wrapper:nth-child(5n+1) .sound-btn {
-    background: #ff3b30;
+    background: #ff304f;
+
+    border-color: #ff4965;
+
     box-shadow:
-        0 6px 0 #b3241c,
-        0 8px 10px rgba(0, 0, 0, 0.3);
+        0 5px 0 #8e1426,
+        0 0 8px #ff304f,
+        0 0 18px rgba(255, 48, 79, 0.75),
+        0 0 35px rgba(255, 48, 79, 0.35);
 }
 
-.btn-wrapper:nth-child(5n+1) .sound-btn:active {
+.btn-wrapper:nth-child(5n+1) .sound-btn:hover {
     box-shadow:
-        0 2px 0 #b3241c,
-        0 4px 6px rgba(0, 0, 0, 0.3);
+        0 5px 0 #8e1426,
+        0 0 12px #ff304f,
+        0 0 28px #ff304f,
+        0 0 50px rgba(255, 48, 79, 0.6);
+}.btn-wrapper:nth-child(5n+1) .sound-btn:active {
+    box-shadow:
+        0 1px 0 #8e1426,
+        0 0 12px #ff304f,
+        0 0 30px #ff304f;
 }
 
 
-/* 2. Синий */
+/* ==========================================
+   2. СИНИЙ
+   ========================================== */
 
 .btn-wrapper:nth-child(5n+2) .sound-btn {
-    background: #007aff;
+    background: #087cff;
+
+    border-color: #20a0ff;
+
     box-shadow:
-        0 6px 0 #0051a8,
-        0 8px 10px rgba(0, 0, 0, 0.3);
+        0 5px 0 #034987,
+        0 0 8px #087cff,
+        0 0 18px rgba(8, 124, 255, 0.8),
+        0 0 35px rgba(8, 124, 255, 0.4);
+}
+
+.btn-wrapper:nth-child(5n+2) .sound-btn:hover {
+    box-shadow:
+        0 5px 0 #034987,
+        0 0 12px #087cff,
+        0 0 28px #087cff,
+        0 0 50px rgba(8, 124, 255, 0.65);
 }
 
 .btn-wrapper:nth-child(5n+2) .sound-btn:active {
     box-shadow:
-        0 2px 0 #0051a8,
-        0 4px 6px rgba(0, 0, 0, 0.3);
+        0 1px 0 #034987,
+        0 0 12px #087cff,
+        0 0 30px #087cff;
 }
 
 
-/* 3. Зеленый */
+/* ==========================================
+   3. ЗЕЛЁНЫЙ
+   ========================================== */
 
 .btn-wrapper:nth-child(5n+3) .sound-btn {
-    background: #34c759;
+    background: #24d85c;
+
+    border-color: #4aff7c;
+
     box-shadow:
-        0 6px 0 #208237,
-        0 8px 10px rgba(0, 0, 0, 0.3);
+        0 5px 0 #146e31,
+        0 0 8px #24d85c,
+        0 0 18px rgba(36, 216, 92, 0.8),
+        0 0 35px rgba(36, 216, 92, 0.4);
+}
+
+.btn-wrapper:nth-child(5n+3) .sound-btn:hover {
+    box-shadow:
+        0 5px 0 #146e31,
+        0 0 12px #24d85c,
+        0 0 28px #24d85c,
+        0 0 50px rgba(36, 216, 92, 0.65);
 }
 
 .btn-wrapper:nth-child(5n+3) .sound-btn:active {
     box-shadow:
-        0 2px 0 #208237,
-        0 4px 6px rgba(0, 0, 0, 0.3);
+        0 1px 0 #146e31,
+        0 0 12px #24d85c,
+        0 0 30px #24d85c;
 }
 
 
-/* 4. Желтый */
+/* ==========================================
+   4. ЖЁЛТЫЙ
+   ========================================== */
 
 .btn-wrapper:nth-child(5n+4) .sound-btn {
-    background: #ffcc00;
+    background: #ffd21a;
+
+    border-color: #ffe66b;
+
     box-shadow:
-        0 6px 0 #b38f00,
-        0 8px 10px rgba(0, 0, 0, 0.3);
+        0 5px 0 #8f7200,
+        0 0 8px #ffd21a,
+        0 0 18px rgba(255, 210, 26, 0.8),
+        0 0 35px rgba(255, 210, 26, 0.4);
+}
+
+.btn-wrapper:nth-child(5n+4) .sound-btn:hover {
+    box-shadow:
+        0 5px 0 #8f7200,
+        0 0 12px #ffd21a,
+        0 0 28px #ffd21a,
+        0 0 50px rgba(255, 210, 26, 0.65);
 }
 
 .btn-wrapper:nth-child(5n+4) .sound-btn:active {
     box-shadow:
-        0 2px 0 #b38f00,
-        0 4px 6px rgba(0, 0, 0, 0.3);
+        0 1px 0 #8f7200,
+        0 0 12px #ffd21a,
+        0 0 30px #ffd21a;
 }
 
 
-/* 5. Фиолетовый */
+/* ==========================================
+   5. ФИОЛЕТОВЫЙ
+   ========================================== */
 
 .btn-wrapper:nth-child(5n+5) .sound-btn {
-    background: #af52de;
+    background: #b84cff;
+
+    border-color: #d18aff;
+
     box-shadow:
-        0 6px 0 #7a349c,
-        0 8px 10px rgba(0, 0, 0, 0.3);
+        0 5px 0 #65258d,
+        0 0 8px #b84cff,
+        0 0 18px rgba(184, 76, 255, 0.8),
+        0 0 35px rgba(184, 76, 255, 0.4);
+}
+
+.btn-wrapper:nth-child(5n+5) .sound-btn:hover {
+    box-shadow:
+        0 5px 0 #65258d,
+        0 0 12px #b84cff,
+        0 0 28px #b84cff,
+        0 0 50px rgba(184, 76, 255, 0.65);
 }
 
 .btn-wrapper:nth-child(5n+5) .sound-btn:active {
     box-shadow:
-        0 2px 0 #7a349c,
-        0 4px 6px rgba(0, 0, 0, 0.3);
+        0 1px 0 #65258d,
+        0 0 12px #b84cff,
+        0 0 30px #b84cff;
 }
 
 
@@ -188,47 +367,64 @@ h1 {
 
 .stop-container {
     position: fixed;
+
     right: 15px;
     bottom: 15px;
 
-    /* Убираем старый отступ сверху */
     margin: 0;
 
-    /* Кнопка поверх остальных элементов */
     z-index: 9999;
 }
 
 .stop-btn {
-    background-color: #d9534f;
+    background: #b9162e;
+
     color: white;
 
-    border: none;
+    border: 2px solid #ff405b;
 
     padding: 15px 35px;
 
     font-size: 16px;
+
     font-weight: bold;
 
-    border-radius: 6px;
+    border-radius: 10px;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 0 6px #ff304f,
+        0 0 15px rgba(255, 48, 79, 0.8),
+        0 0 30px rgba(255, 48, 79, 0.45);
 
-    transition:background-color 0.1s,
-        transform 0.05s;
+    transition:
+        background-color 0.15s ease,
+        transform 0.08s ease,
+        box-shadow 0.15s ease;
 }
+
 
 /* Наведение мышки */
 
 .stop-btn:hover {
-    background-color: #c9302c;
+    background: #e51d3b;
+
+    box-shadow:
+        0 0 8px #ff304f,
+        0 0 20px #ff304f,
+        0 0 40px rgba(255, 48, 79, 0.7);
 }
+
 
 /* Нажатие */
 
 .stop-btn:active {
     transform: scale(0.95);
+
+    box-shadow:
+        0 0 5px #ff304f,
+        0 0 15px #ff304f;
 }
 
 
@@ -238,6 +434,10 @@ h1 {
 
 @media (max-width: 600px) {
 
+    body {
+        padding: 25px 8px;
+    }
+
     .stop-container {
         right: 12px;
         bottom: 12px;
@@ -246,5 +446,14 @@ h1 {
     .stop-btn {
         padding: 13px 25px;
         font-size: 15px;
+    }
+
+    .btn-container {
+        gap: 22px 15px;
+    }
+
+    .sound-btn {
+        width: 72px;
+        height: 72px;
     }
 }
